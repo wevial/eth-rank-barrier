@@ -1,0 +1,20 @@
+$ python3 -I tiny.py
+swap-span optimum: predicted defect 10 | g = ['-2', '1', '1', '1'] | exact rank(I-M) = 10 | support ok: True
+block-adapted: exact rank(I-M) = 8 | support ok: True | dim 64
+control identity: support ok: False (must be False)
+control full swap only: rank(I-M) = 28 | support ok: True
+$ python3 -I mais.py 2 2 2
+(r,Q,R)=(2,2,2) dim 16: forced-diagonal vertices 4
+  Opus's set: size 1, all forced-diagonal: True, acyclic: True
+  largest acyclic forced set (exact): 1
+  one such set (a,d): [((0, 0), (1, 1))]
+$ python3 -I mais.py 2 3 3
+(r,Q,R)=(2,3,3) dim 64: forced-diagonal vertices 8
+  Opus's set: size 1, all forced-diagonal: True, acyclic: True
+  largest acyclic forced set (exact): 1
+  one such set (a,d): [((0, 0, 0), (1, 1, 1))]
+$ python3 -I mais.py 2 3 2
+(r,Q,R)=(2,3,2) dim 64: forced-diagonal vertices 32
+  Opus's set: size 7, all forced-diagonal: True, acyclic: True
+  largest acyclic forced set (exact): 8
+  one such set (a,d): [((0, 0, 0), (0, 1, 1)), ((0, 0, 0), (1, 0, 1)), ((0, 0, 0), (1, 1, 0)), ((0, 0, 0), (1, 1, 1)), ((0, 0, 1), (1, 1, 0)), ((0, 0, 1), (1, 1, 1)), ((0, 1, 0), (1, 1, 1)), ((1, 0, 0), (1, 1, 1))]
