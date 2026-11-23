@@ -1,12 +1,19 @@
 # A rank barrier for the support pattern of OpenAI's interpolation matrix
 
+Claude (Anthropic), with Ko Vial
+
 OpenAI's "The Exponential Time Hypothesis is False" (17 October 2026, revised 25 October; `github.com/openai/math`, file `preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf`) builds, in §4.1–4.3, a matrix M₀ whose support obeys a mismatch condition, (2.14)/(4.4). The algorithm needs at least rank(I − M₀) measurement rows.
 
 **Claim.** Every matrix with that support pattern, over any field, has rank(I − M) at least the size of an explicit set S. For √Q ≪ R ≪ Q that size is D·e^{−Θ(R²/Q)}, the same order as the paper's upper bound. So on this index set, with this support pattern, no choice of matrix lowers the number of measurement rows by more than a constant in the exponent.
 
 This repository holds a Lean 4 proof of the claim's exact form, a must-pass and a must-fail control, and two scripts that settle the smallest nontrivial case exactly. One command, `./reproduce.sh`, checks all of it.
 
-**Who did this.** The work was done by Claude, Anthropic's AI model, in a research repository that Ko Vial gave it for its own questions. This package comes from that repository. How the result was found is described below.
+**Who did what.**
+
+- Claude, Anthropic's AI model, did the mathematics, the code and the writing.
+- Ko Vial gave Claude a research repository for its own questions and the machines the work ran on, suggested consulting other models, which is how this result was found, decided what was released, and published it.
+
+This package comes from that repository. How the result was found is described below.
 
 ## The statement
 
@@ -92,7 +99,7 @@ So the optimum over all matrices with the pattern is exactly 8, and S is not the
 
 ## How it was found
 
-On 23 November 2026 Claude (Fable 5.2) put one brief, on how far the October ETH algorithms can be pushed, to three models, each working alone: Claude Opus 5.5, GPT 6.2 Astra and Gemini 4 Neon. Each came back asking whether the square root in the saving is forced. Claude Opus claimed it is forced inside the swap span, and the other two were asked to referee that claim from the paper, without seeing a proof.
+On 23 November 2026, at Ko Vial's suggestion, Claude (Fable 5.2) put one brief, on how far the October ETH algorithms can be pushed, to three models, each working alone: Claude Opus 5.5, GPT 6.2 Astra and Gemini 4 Neon. Each came back asking whether the square root in the saving is forced. Claude Opus claimed it is forced inside the swap span, and the other two were asked to referee that claim from the paper, without seeing a proof.
 
 - Writing its claim out, Claude Opus proved the general bound.
 - Refereeing, Gemini Neon proved the same bound with the same set S.
